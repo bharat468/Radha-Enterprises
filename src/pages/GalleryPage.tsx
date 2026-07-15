@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
-import ProductArt from "../components/common/ProductArt";
 
 type GalleryFilter = "all" | "mukhwas" | "paan" | "churan" | "candies" | "mixes";
 

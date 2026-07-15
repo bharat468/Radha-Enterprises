@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SectionHeading from "../common/SectionHeading";
-import ProductArt from "../common/ProductArt";
 
 const galleryItems = [
   { img: new URL("../../assets/product-image/40.jpeg", import.meta.url).href, span: "row-span-2", label: "Premium Gulab Mukhwas" },

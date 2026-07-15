@@ -126,7 +126,7 @@ export default function Hero() {
                 { value: "100%", label: "Authentic Flavours" },
                 { value: "65+", label: "Premium Products" },
                 { value: "Fresh", label: "Crafted with Care" },
-              ].map((stat, i) => (
+              ].map((stat) => (
                 <div key={stat.label}>
                   <p className="font-display text-2xl sm:text-3xl text-maroon">{stat.value}</p>
                   <p className="text-xs text-ink/55 mt-1">{stat.label}</p>
