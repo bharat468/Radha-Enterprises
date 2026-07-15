@@ -15,7 +15,7 @@ export default function CategoriesSection() {
           description="From the after-dinner mukhwas bowl to the festival gifting hamper — explore every category we craft."
         />
 
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.slug}
@@ -28,16 +28,22 @@ export default function CategoriesSection() {
                 to={`/products/category/${cat.slug}`}
                 className="group relative block aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-maroon-dark to-maroon shadow-luxury hover:shadow-luxury-lg transition-shadow duration-500"
               >
-                <div className="absolute inset-0 bg-noise opacity-20" />
+                <div className="absolute inset-0 bg-noise opacity-20 z-10" />
                 <motion.div
-                  className="absolute inset-0 flex items-center justify-center p-6"
-                  whileHover={{ scale: 1.15 }}
-                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0 w-full h-full"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                  <ProductArt type={cat.art} seed={i + 1} className="w-2/3 h-2/3 opacity-90" />
+                  {cat.image ? (
+                    <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center p-6">
+                      <ProductArt type={cat.art} seed={i + 1} className="w-2/3 h-2/3 opacity-90" />
+                    </div>
+                  )}
                 </motion.div>
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent z-10" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                   <h3 className="font-display text-cream text-base sm:text-lg leading-tight">{cat.name}</h3>
                   <p className="text-cream/60 text-[11px] mt-0.5 line-clamp-1">{cat.tagline}</p>
                 </div>

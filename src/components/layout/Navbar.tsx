@@ -119,7 +119,7 @@ export default function Navbar() {
               <Download size={18} />
             </a>
             <a
-              href="https://wa.me/910000000000"
+              href="https://wa.me/917023557846"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 bg-maroon-gradient text-cream px-4 py-2 rounded-full text-sm font-medium shadow-gold hover:scale-105 transition-transform"
@@ -163,7 +163,7 @@ export default function Navbar() {
                 </NavLink>
               ))}
               <a
-                href="https://wa.me/910000000000"
+                href="https://wa.me/917023557846"
                 className="flex items-center justify-center gap-2 bg-maroon-gradient text-cream px-4 py-3 rounded-full text-sm font-medium mt-2"
               >
                 <MessageCircle size={16} /> WhatsApp Inquiry

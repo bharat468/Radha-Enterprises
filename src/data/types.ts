@@ -7,7 +7,7 @@ export type CategorySlug =
   | "amla"
   | "candies"
   | "supari"
-  | "digestive-mixes"
+  | "tangy-digestives"
   | "roasted-mixes";
 
 export interface Category {
@@ -16,6 +16,7 @@ export interface Category {
   tagline: string;
   description: string;
   art: "leaf" | "seed" | "drop" | "spiral" | "grain" | "berry" | "candy" | "nut" | "mix" | "roast";
+  image?: string;
 }
 
 export interface PackSize {

@@ -27,7 +27,7 @@ export default function ContactCtaSection() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
-                href="https://wa.me/910000000000"
+                href="https://wa.me/917023557846"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3.5 rounded-full text-sm font-medium hover:scale-105 transition-transform"
@@ -35,7 +35,7 @@ export default function ContactCtaSection() {
                 <MessageCircle size={16} /> WhatsApp Us
               </a>
               <a
-                href="tel:+910000000000"
+                href="tel:+917023557846"
                 className="inline-flex items-center gap-2 glass-panel text-cream px-6 py-3.5 rounded-full text-sm font-medium hover:bg-cream/10 transition-colors"
               >
                 <Phone size={16} /> Call Now

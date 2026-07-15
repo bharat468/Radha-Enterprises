@@ -4,6 +4,7 @@ import { ArrowRight, Download, MessageCircle, ChevronDown, Sparkles } from "luci
 import { Link } from "react-router-dom";
 import ProductArt from "../common/ProductArt";
 
+// Abstract art for floating background elements looks much cleaner than square photos
 const floatingSeeds = [
   { type: "seed" as const, top: "12%", left: "8%", size: 70, seed: 3, delay: 0 },
   { type: "leaf" as const, top: "20%", left: "87%", size: 92, seed: 7, delay: 0.6 },
@@ -106,7 +107,7 @@ export default function Hero() {
                 <Download size={16} /> Request Catalogue
               </a>
               <a
-                href="https://wa.me/919606094081"
+                href="https://wa.me/917023557846"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-maroon px-3 py-3.5 text-sm font-medium hover:text-maroon-light transition-colors"
@@ -154,15 +155,25 @@ export default function Hero() {
                 </div>
 
                 <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-gold/20 bg-gradient-to-br from-maroon to-maroon/90 p-4 text-cream shadow-luxury">
-                    <ProductArt type="leaf" seed={21} className="h-36 w-full" />
-                    <p className="mt-3 text-sm font-semibold">Royal Rose Mukhwas</p>
-                    <p className="text-xs text-cream/70">Sugar-crystal fennel with rose petals</p>
+                  <div className="rounded-2xl border border-gold/20 bg-gradient-to-br from-maroon to-maroon-dark p-3 text-cream shadow-luxury flex flex-col group overflow-hidden">
+                    <div className="h-40 sm:h-44 w-full rounded-[14px] overflow-hidden mb-4 relative shadow-inner">
+                      <img src={new URL("../../assets/product-image/40.jpeg", import.meta.url).href} alt="Royal Rose Mukhwas" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                      <div className="absolute inset-0 border border-black/10 rounded-[14px]" />
+                    </div>
+                    <div className="px-1">
+                      <p className="text-sm font-semibold tracking-wide">Royal Rose Mukhwas</p>
+                      <p className="text-xs text-cream/70 mt-1 line-clamp-2 leading-relaxed">Sugar-crystal fennel with rose petals</p>
+                    </div>
                   </div>
-                  <div className="rounded-2xl border border-gold/20 bg-white p-4 shadow-luxury">
-                    <ProductArt type="candy" seed={14} className="h-36 w-full" />
-                    <p className="mt-3 text-sm font-semibold text-ink">Paan Digestive Candy</p>
-                    <p className="text-xs text-ink/60">Foil-wrapped, festive finish, full flavour</p>
+                  <div className="rounded-2xl border border-gold/30 bg-[#fdfbf7] p-3 shadow-luxury flex flex-col group overflow-hidden">
+                    <div className="h-40 sm:h-44 w-full rounded-[14px] overflow-hidden mb-4 relative shadow-sm">
+                      <img src={new URL("../../assets/product-image/50.jpeg", import.meta.url).href} alt="Paan Digestive Candy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                      <div className="absolute inset-0 border border-black/5 rounded-[14px]" />
+                    </div>
+                    <div className="px-1">
+                      <p className="text-sm font-semibold text-ink tracking-wide">Paan Digestive Candy</p>
+                      <p className="text-xs text-ink/60 mt-1 line-clamp-2 leading-relaxed">Foil-wrapped, festive finish, full flavour</p>
+                    </div>
                   </div>
                 </div>
 

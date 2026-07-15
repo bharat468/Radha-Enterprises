@@ -70,15 +70,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-gold shrink-0" />
-                <span>Madhuwan Pareek: +91 9606094081</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone size={16} className="text-gold shrink-0" />
-                <span>Hariom Pareek: +91 8160949160</span>
+                <span>Sales & Inquiry: +91 7023557846</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-gold shrink-0" />
-                <span>sales@radhaenterprises.in</span>
+                <span>radha.enterprises@gmail.com</span>
               </li>
             </ul>
           </div>

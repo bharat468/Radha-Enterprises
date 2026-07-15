@@ -116,7 +116,7 @@ export default function ProductsPage() {
             ) : (
               <motion.div
                 layout
-                className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"
               >
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} onQuickView={setQuickView} />

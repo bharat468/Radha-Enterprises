@@ -13,15 +13,16 @@ export default function LoadingScreen() {
         initial={{ scale: 0.6, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-20 h-20 rounded-full bg-gold/15 border-2 border-gold/50 flex items-center justify-center mb-5"
+        className="relative w-24 h-24 rounded-full bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold/50 flex items-center justify-center mb-6 shadow-luxury"
       >
-        <motion.span
-          animate={{ rotate: 360 }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          className="font-display text-3xl text-gold"
-        >
+        <motion.div
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute inset-0 rounded-full border border-gold/30"
+        />
+        <span className="font-display text-4xl text-gold mt-1">
           R
-        </motion.span>
+        </span>
       </motion.div>
       <motion.p
         initial={{ opacity: 0, y: 8 }}

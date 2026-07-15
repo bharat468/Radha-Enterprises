@@ -48,7 +48,7 @@ export default function CategoryPage() {
       {/* Products */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-14">
         <p className="text-sm text-ink/50 mb-5">{categoryProducts.length} products in this category</p>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
           {categoryProducts.map((product) => (
             <ProductCard key={product.id} product={product} onQuickView={setQuickView} />
           ))}

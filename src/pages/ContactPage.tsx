@@ -34,9 +34,8 @@ export default function ContactPage() {
           <div className="space-y-5">
             {[
               { icon: MapPin, title: "Address", text: "Phogan, Sardarsahar, Churu, Rajasthan - 331402" },
-              { icon: Phone, title: "Madhuwan Pareek", text: "+91 9606094081" },
-              { icon: Phone, title: "Hariom Pareek", text: "+91 8160949160" },
-              { icon: Mail, title: "Email", text: "sales@radhaenterprises.in" },
+              { icon: Phone, title: "Sales & Inquiry", text: "+91 7023557846" },
+              { icon: Mail, title: "Email", text: "radha.enterprises@gmail.com" },
               { icon: Clock, title: "Business Hours", text: "Mon – Sat, 9:00 AM – 7:00 PM IST" },
             ].map((info) => (
               <div key={info.title} className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gold/20 shadow-luxury">
@@ -52,7 +51,7 @@ export default function ContactPage() {
 
             <div className="flex gap-3 pt-2">
               <a
-                href="https://wa.me/919606094081"
+                href="https://wa.me/917023557846"
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full text-sm font-medium hover:scale-[1.02] transition-transform"

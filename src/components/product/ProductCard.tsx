@@ -81,7 +81,7 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
               <Eye size={17} />
             </button>
             <a
-              href={`https://wa.me/910000000000?text=${encodeURIComponent(
+              href={`https://wa.me/917023557846?text=${encodeURIComponent(
                 `Hi, I'm interested in ${product.name}`
               )}`}
               target="_blank"

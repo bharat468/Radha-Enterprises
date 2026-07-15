@@ -70,7 +70,7 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
 
               <div className="mt-auto flex flex-col gap-2 pt-2">
                 <a
-                  href={`https://wa.me/910000000000?text=${encodeURIComponent(`Hi, I'm interested in ${product.name}`)}`}
+                  href={`https://wa.me/917023557846?text=${encodeURIComponent(`Hi, I'm interested in ${product.name}`)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-4 py-2.5 rounded-full text-sm font-medium hover:scale-[1.02] transition-transform"
