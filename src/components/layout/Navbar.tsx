@@ -147,7 +147,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden mx-4 mt-2 glass-panel rounded-2xl overflow-hidden shadow-luxury"
+            className="lg:hidden mx-4 mt-2 bg-cream rounded-2xl overflow-hidden shadow-luxury-lg border border-gold/20 relative z-50"
           >
             <div className="p-5 flex flex-col gap-4 font-body">
               {navLinks.map((link) => (

@@ -123,10 +123,10 @@ export default function Hero() {
               className="flex flex-wrap gap-8 mt-12"
             >
               {[
-                { value: "25+", label: "Years of Craft" },
-                { value: "60+", label: "Products" },
-                { value: "500+", label: "Retail Partners" },
-              ].map((stat) => (
+                { value: "100%", label: "Authentic Flavours" },
+                { value: "65+", label: "Premium Products" },
+                { value: "Fresh", label: "Crafted with Care" },
+              ].map((stat, i) => (
                 <div key={stat.label}>
                   <p className="font-display text-2xl sm:text-3xl text-maroon">{stat.value}</p>
                   <p className="text-xs text-ink/55 mt-1">{stat.label}</p>

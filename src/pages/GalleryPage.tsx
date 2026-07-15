@@ -4,30 +4,30 @@ import { X, ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
 import ProductArt from "../components/common/ProductArt";
 
-type GalleryFilter = "all" | "factory" | "products" | "packaging" | "ingredients" | "wholesale";
+type GalleryFilter = "all" | "mukhwas" | "paan" | "churan" | "candies" | "mixes";
 
-const galleryItems: { type: "leaf" | "seed" | "drop" | "spiral" | "grain" | "berry" | "candy" | "nut" | "mix" | "roast"; seed: number; label: string; filter: GalleryFilter; tall?: boolean }[] = [
-  { type: "leaf", seed: 101, label: "Hand-Rolled Paan Station", filter: "factory", tall: true },
-  { type: "seed", seed: 102, label: "Roasted Saunf Batch", filter: "products" },
-  { type: "mix", seed: 103, label: "Digestive Mix Blending", filter: "ingredients" },
-  { type: "candy", seed: 104, label: "Gold Foil Candy Wrapping", filter: "packaging", tall: true },
-  { type: "berry", seed: 105, label: "Sun-Dried Amla Sorting", filter: "ingredients" },
-  { type: "nut", seed: 106, label: "Supari Slicing Floor", filter: "factory" },
-  { type: "spiral", seed: 107, label: "Churan Grinding Unit", filter: "factory" },
-  { type: "drop", seed: 108, label: "Mukhwas Shot Sachets", filter: "products", tall: true },
-  { type: "roast", seed: 109, label: "Roasted Seed Mix Trays", filter: "products" },
-  { type: "grain", seed: 110, label: "Bulk Pallet — Wholesale", filter: "wholesale" },
-  { type: "leaf", seed: 111, label: "Festive Hamper Packing", filter: "packaging" },
-  { type: "nut", seed: 112, label: "Wholesale Crates Loading", filter: "wholesale", tall: true },
+const galleryItems: { img: string; label: string; filter: GalleryFilter; tall?: boolean }[] = [
+  { img: new URL("../assets/product-image/40.jpeg", import.meta.url).href, label: "Premium Gulab Mukhwas", filter: "mukhwas", tall: true },
+  { img: new URL("../assets/product-image/24.jpeg", import.meta.url).href, label: "Gulkand Paan", filter: "paan" },
+  { img: new URL("../assets/product-image/55.jpeg", import.meta.url).href, label: "Gujrati Digestive Mix", filter: "mixes" },
+  { img: new URL("../assets/product-image/50.jpeg", import.meta.url).href, label: "Paan Digestive Candy", filter: "candies", tall: true },
+  { img: new URL("../assets/product-image/35.jpeg", import.meta.url).href, label: "Sweet Amla Candy", filter: "candies" },
+  { img: new URL("../assets/product-image/13.jpeg", import.meta.url).href, label: "Anardana Goli", filter: "churan" },
+  { img: new URL("../assets/product-image/75.jpeg", import.meta.url).href, label: "Jeera Goli", filter: "churan" },
+  { img: new URL("../assets/product-image/16.jpeg", import.meta.url).href, label: "Mukhwas Shots", filter: "mukhwas", tall: true },
+  { img: new URL("../assets/product-image/6.jpeg", import.meta.url).href, label: "Shahi Rajasthani Mukhwas", filter: "mukhwas" },
+  { img: new URL("../assets/product-image/14.jpeg", import.meta.url).href, label: "Sugar Coated Saunf", filter: "mukhwas" },
+  { img: new URL("../assets/product-image/27.jpeg", import.meta.url).href, label: "Imli Candy", filter: "candies" },
+  { img: new URL("../assets/product-image/26.jpeg", import.meta.url).href, label: "Raseeli Supari", filter: "paan", tall: true },
 ];
 
 const filters: { key: GalleryFilter; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "factory", label: "Factory" },
-  { key: "products", label: "Products" },
-  { key: "packaging", label: "Packaging" },
-  { key: "ingredients", label: "Ingredients" },
-  { key: "wholesale", label: "Wholesale" },
+  { key: "mukhwas", label: "Mukhwas" },
+  { key: "paan", label: "Paan & Supari" },
+  { key: "candies", label: "Candies" },
+  { key: "churan", label: "Churan" },
+  { key: "mixes", label: "Digestive Mixes" },
 ];
 
 export default function GalleryPage() {
@@ -80,14 +80,12 @@ export default function GalleryPage() {
                 item.tall ? "row-span-2" : ""
               }`}
             >
-              <motion.div
-                className="absolute inset-0 p-6"
-                whileHover={{ scale: 1.12 }}
-                transition={{ duration: 0.5 }}
-              >
-                <ProductArt type={item.type} seed={item.seed} className="w-full h-full" />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <div className="absolute inset-0 p-0 overflow-hidden">
+                <motion.div className="w-full h-full" whileHover={{ scale: 1.08 }} transition={{ duration: 0.7 }}>
+                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                </motion.div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                 <p className="text-cream text-xs sm:text-sm font-medium">{item.label}</p>
               </div>
             </motion.button>
@@ -140,11 +138,11 @@ export default function GalleryPage() {
               onClick={(e) => e.stopPropagation()}
               className="text-center"
             >
-              <div className="w-72 sm:w-96 h-72 sm:h-96 mx-auto">
-                <ProductArt
-                  type={filtered[lightboxIndex].type}
-                  seed={filtered[lightboxIndex].seed}
-                  className="w-full h-full"
+              <div className="w-[85vw] max-w-xl aspect-square sm:w-96 sm:h-96 mx-auto rounded-xl overflow-hidden bg-white">
+                <img
+                  src={filtered[lightboxIndex].img}
+                  alt={filtered[lightboxIndex].label}
+                  className="w-full h-full object-contain"
                 />
               </div>
               <p className="text-cream font-display text-lg mt-4">{filtered[lightboxIndex].label}</p>

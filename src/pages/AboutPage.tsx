@@ -35,7 +35,7 @@ export default function AboutPage() {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl sm:text-5xl md:text-6xl text-ink leading-tight mb-6"
           >
-            A Family Recipe, <span className="text-gradient-gold">Grown Into a Legacy</span>
+            A Family Recipe, <span className="text-gradient-gold">Reimagined for Today</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="text-ink/65 leading-relaxed max-w-2xl mx-auto"
           >
-            Radha Enterprises began in the heart of Rajasthan with family recipes, hand-finished flavours and a deep respect for the rituals of hospitality. Today we craft premium mukhwas, paan, supari, candies and digestive products for households, gift buyers and retailers — while preserving the traditional character that made us trusted in the first place.
+            Starting this month, Radha Enterprises brings the authentic flavours of Rajasthan directly to your homes. What began as cherished family recipes—hand-finished flavours and a deep respect for the rituals of hospitality—is now a premium brand. We are excited to craft mukhwas, paan, supari, candies, and digestive products with the same warmth and care that made them special in the first place.
           </motion.p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function AboutPage() {
             <p className="text-gold-pale text-xs uppercase tracking-wider mb-2">Founder's Note</p>
             <h3 className="font-display text-cream text-2xl mb-3">Built on a Mother's Recipe</h3>
             <p className="text-cream/70 text-sm leading-relaxed">
-              "Every product on our shelf started with a family recipe and a promise of care. What began as a household tradition is now a brand that carries the same warmth, freshness and attention to detail into every pouch, tin and festive box."
+              "Every product on our shelf starts with a family recipe and a promise of care. We are beginning this journey to bring our household traditions into your homes, ensuring that every pouch, tin, and festive box carries our signature warmth, freshness, and attention to detail."
             </p>
             <p className="font-display text-gold-muted mt-4">— Founder, Radha Enterprises</p>
           </div>

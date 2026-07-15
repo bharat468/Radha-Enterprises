@@ -5,12 +5,13 @@ import SectionHeading from "../common/SectionHeading";
 import ProductArt from "../common/ProductArt";
 
 const galleryItems = [
-  { type: "leaf" as const, seed: 31, span: "row-span-2", label: "Hand-rolled Paan" },
-  { type: "seed" as const, seed: 32, span: "", label: "Roasted Saunf" },
-  { type: "mix" as const, seed: 33, span: "", label: "Digestive Mix" },
-  { type: "candy" as const, seed: 34, span: "row-span-2", label: "Gold Foil Candies" },
-  { type: "berry" as const, seed: 35, span: "", label: "Sun-dried Amla" },
-  { type: "nut" as const, seed: 36, span: "", label: "Sliced Supari" },
+  { img: new URL("../../assets/product-image/40.jpeg", import.meta.url).href, span: "row-span-2", label: "Premium Gulab Mukhwas" },
+  { img: new URL("../../assets/product-image/50.jpeg", import.meta.url).href, span: "", label: "Paan Candy" },
+  { img: new URL("../../assets/product-image/35.jpeg", import.meta.url).href, span: "", label: "Sweet Amla" },
+  { img: new URL("../../assets/product-image/16.jpeg", import.meta.url).href, span: "row-span-2", label: "Mukhwas Shots" },
+  { img: new URL("../../assets/product-image/55.jpeg", import.meta.url).href, span: "", label: "Digestive Mix" },
+  { img: new URL("../../assets/product-image/26.jpeg", import.meta.url).href, span: "", label: "Raseeli Supari" },
+  { img: new URL("../../assets/product-image/41.jpeg", import.meta.url).href, span: "", label: "Gulkand Paan" },
 ];
 
 export default function GalleryTeaserSection() {
@@ -43,13 +44,11 @@ export default function GalleryTeaserSection() {
               transition={{ duration: 0.5, delay: i * 0.07 }}
               className={`group relative rounded-2xl overflow-hidden bg-gradient-to-br from-maroon/5 to-gold/10 border border-gold/20 ${item.span}`}
             >
-              <motion.div
-                className="w-full h-full flex items-center justify-center p-6"
-                whileHover={{ scale: 1.15 }}
-                transition={{ duration: 0.5 }}
-              >
-                <ProductArt type={item.type} seed={item.seed} className="w-full h-full" />
-              </motion.div>
+              <div className="absolute inset-0 p-0 overflow-hidden">
+                <motion.div className="w-full h-full" whileHover={{ scale: 1.08 }} transition={{ duration: 0.7 }}>
+                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                </motion.div>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                 <p className="text-cream text-sm font-medium">{item.label}</p>
               </div>

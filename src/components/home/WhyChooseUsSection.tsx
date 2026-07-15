@@ -21,8 +21,8 @@ const features = [
   },
   {
     icon: Truck,
-    title: "Pan-India Distribution",
-    description: "From local mithai shops to national retail chains, our network keeps shelves stocked fresh.",
+    title: "Freshly Delivered",
+    description: "Every product is packed fresh and delivered carefully to ensure the best taste and aroma reaches your home.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function WhyChooseUsSection() {
         <SectionHeading
           eyebrow="Why Radha Enterprises"
           title="Crafted With Care,"
-          highlight="Trusted For Decades"
+          highlight="Uncompromising Quality"
           light
           description="What separates a tin of mukhwas you keep on the table from one you forget — it's in the detail."
         />
@@ -89,10 +89,10 @@ export default function WhyChooseUsSection() {
         {/* Counters strip */}
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 border-t border-gold/15 pt-10">
           {[
-            { value: 25, suffix: "+", label: "Years in Business" },
-            { value: 60, suffix: "+", label: "Premium Products" },
-            { value: 500, suffix: "+", label: "Retail Partners" },
-            { value: 12, suffix: "L+", label: "Tins Sold Yearly" },
+            { value: 100, suffix: "%", label: "Authentic Ingredients" },
+            { value: 65, suffix: "+", label: "Premium Products" },
+            { value: 100, suffix: "%", label: "Quality Assurance" },
+            { value: 0, suffix: "", label: "Compromise" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <p className="font-display text-3xl sm:text-4xl text-gradient-gold">
