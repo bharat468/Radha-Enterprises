@@ -31,8 +31,6 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
   }) || product.packSizes[0];
   const mainPrice = getPriceData(targetPack?.price);
 
-  const reviewCount = (product.name.length * 3) + 2;
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
