@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Target, Eye, Factory, Package, Truck, Award, MessageCircle } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
-import ProductArt from "../components/common/ProductArt";
 
 const pillars = [
   { icon: Target, title: "Our Mission", text: "To bring the richness of Rajasthan’s traditional mouth fresheners and digestive delights to modern homes, festive gifting, and retail shelves with uncompromising quality." },
