@@ -79,9 +79,8 @@ export default function ProductDetailPage() {
                 <button
                   key={`${thumb}-${i}`}
                   onClick={() => setActiveThumb(i)}
-                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-colors bg-gradient-to-br from-gold/5 to-maroon/5 ${
-                    activeThumb === i ? "border-gold" : "border-gold/15"
-                  }`}
+                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-colors bg-gradient-to-br from-gold/5 to-maroon/5 ${activeThumb === i ? "border-gold" : "border-gold/15"
+                    }`}
                 >
                   {typeof thumb === "string" ? (
                     <img src={thumb} alt={`${product.name} view ${i + 1}`} className="h-full w-full object-cover" />
@@ -136,11 +135,10 @@ export default function ProductDetailPage() {
                   <button
                     key={pack.label}
                     onClick={() => setSelectedPack(i)}
-                    className={`text-sm px-4 py-2 rounded-full border-2 transition-colors ${
-                      selectedPack === i
+                    className={`text-sm px-4 py-2 rounded-full border-2 transition-colors ${selectedPack === i
                         ? "border-maroon bg-maroon text-cream"
                         : "border-maroon/20 text-maroon hover:border-maroon/50"
-                    }`}
+                      }`}
                   >
                     {pack.label}
                     {pack.price ? ` • ${pack.price}` : ""}

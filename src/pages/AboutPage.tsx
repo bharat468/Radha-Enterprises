@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Eye, Factory, Package, Truck, Award } from "lucide-react";
+import { Target, Eye, Factory, Package, Truck, Award, MessageCircle } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
 import ProductArt from "../components/common/ProductArt";
 
@@ -70,20 +70,128 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder Section */}
-      <section className="py-16 bg-maroon-gradient relative overflow-hidden">
-        <div className="absolute inset-0 bg-noise opacity-20" />
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 grid sm:grid-cols-[200px_1fr] gap-10 items-center">
-          <div className="w-44 h-44 rounded-full bg-gold/15 border-2 border-gold/40 mx-auto flex items-center justify-center p-8">
-            <ProductArt type="leaf" seed={50} className="w-full h-full" />
-          </div>
-          <div>
-            <p className="text-gold-pale text-xs uppercase tracking-wider mb-2">Founder's Note</p>
-            <h3 className="font-display text-cream text-2xl mb-3">Built on a Mother's Recipe</h3>
-            <p className="text-cream/70 text-sm leading-relaxed">
-              "Every product on our shelf starts with a family recipe and a promise of care. We are beginning this journey to bring our household traditions into your homes, ensuring that every pouch, tin, and festive box carries our signature warmth, freshness, and attention to detail."
-            </p>
-            <p className="font-display text-gold-muted mt-4">— Founder, Radha Enterprises</p>
+      {/* Founders Section */}
+      <section className="py-24 bg-cream text-ink relative overflow-hidden">
+        <div className="absolute inset-0 bg-noise opacity-10" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-24">
+            
+            {/* Founder 1 */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              {/* Image side */}
+              <div className="relative group">
+                <div className="aspect-[4/5] overflow-hidden rounded-md relative mix-blend-multiply">
+                  <img 
+                    src="/src/assets/product-image/Founder.jpeg" 
+                    alt="Hariom Pareek" 
+                    className="w-full h-full object-cover transition-all duration-700" 
+                    onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Hariom+Pareek&background=7A1F1F&color=FFFDF8&size=512'; }}
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-maroon-dark/95 to-transparent pt-32 pb-8 px-8">
+                    <h3 className="text-2xl text-white font-medium mb-1">Hariom Pareek</h3>
+                    <p className="text-gold-muted text-xs uppercase tracking-[0.2em]">Founder & Creative Director</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Text side */}
+              <div className="flex flex-col">
+                <p className="text-gold-muted text-xs uppercase tracking-[0.25em] mb-4 flex items-center gap-4">
+                  <span className="w-8 h-px bg-gold-muted/50"></span>
+                  The Founder
+                  <span className="w-8 h-px bg-maroon/30"></span>
+                </p>
+                <h2 className="font-display text-5xl sm:text-6xl text-maroon-dark mb-8">
+                  Hariom <span className="italic text-gold font-light">Pareek</span>
+                </h2>
+                
+                <div className="space-y-6 text-ink/80 text-sm leading-relaxed mb-10 max-w-lg">
+                  <p>
+                    Born with an innate passion for rich traditions and authentic flavours, Hariom Pareek founded Radha Enterprises with a singular vision — to bring the legacy of Rajasthan's finest mukhwas and digestives to discerning households across India.
+                  </p>
+                  <p>
+                    With years of dedication to quality and a deep understanding of premium ingredients, Hariom ensures every product embodies the highest standards of taste, hygiene, and cultural heritage. Headquartered in Churu, Rajasthan, we blend the rich cultural heritage of Rajputana with modern standards.
+                  </p>
+                </div>
+                
+                <div className="pt-8 border-t border-maroon/10 flex flex-wrap justify-between items-end gap-6 max-w-lg">
+                  <div>
+                    <h4 className="text-lg text-maroon-dark font-medium mb-1">Hariom Pareek</h4>
+                    <p className="text-gold-muted text-xs uppercase tracking-widest">Founder, Radha Enterprises</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <a href="#" className="w-10 h-10 rounded border border-ink/15 flex items-center justify-center text-ink/70 hover:text-gold hover:border-gold transition-colors">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" className="w-10 h-10 rounded border border-ink/15 flex items-center justify-center text-ink/70 hover:text-gold hover:border-gold transition-colors">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://wa.me/918160949160" target="_blank" rel="noreferrer" className="w-10 h-10 rounded border border-ink/15 flex items-center justify-center text-ink/70 hover:text-[#25D366] hover:border-[#25D366] transition-colors">
+                      <MessageCircle size={16} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Founder 2 */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              {/* Image side - order-first on mobile, order-last on desktop for alternating layout */}
+              <div className="relative group lg:order-last">
+                <div className="aspect-[4/5] overflow-hidden rounded-md relative mix-blend-multiply">
+                  <img 
+                    src="/src/assets/product-image/co-FOunder .jpeg" 
+                    alt="Madhuwan Pareek" 
+                    className="w-full h-full object-cover transition-all duration-700" 
+                    onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Madhuwan+Pareek&background=7A1F1F&color=FFFDF8&size=512'; }}
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-maroon-dark/95 to-transparent pt-32 pb-8 px-8">
+                    <h3 className="text-2xl text-white font-medium mb-1">Madhuwan Pareek</h3>
+                    <p className="text-gold-muted text-xs uppercase tracking-[0.2em]">Co-Founder</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Text side */}
+              <div className="flex flex-col">
+                <p className="text-gold-muted text-xs uppercase tracking-[0.25em] mb-4 flex items-center gap-4">
+                  <span className="w-8 h-px bg-gold-muted/50"></span>
+                  The Co-Founder
+                  <span className="w-8 h-px bg-maroon/30"></span>
+                </p>
+                <h2 className="font-display text-5xl sm:text-6xl text-maroon-dark mb-8">
+                  Madhuwan <span className="italic text-gold font-light">Pareek</span>
+                </h2>
+                
+                <div className="space-y-6 text-ink/80 text-sm leading-relaxed mb-10 max-w-lg">
+                  <p>
+                    Committed to operational excellence and uncompromising quality, Madhuwan Pareek oversees the meticulous process of crafting our signature blends. From selecting raw ingredients to final packaging, his attention to detail ensures consistency in every batch.
+                  </p>
+                  <p>
+                    Madhuwan brings modern processes to traditional recipes, scaling operations while maintaining the authentic homemade touch that defines the Radha Enterprises experience.
+                  </p>
+                </div>
+                
+                <div className="pt-8 border-t border-maroon/10 flex flex-wrap justify-between items-end gap-6 max-w-lg">
+                  <div>
+                    <h4 className="text-lg text-maroon-dark font-medium mb-1">Madhuwan Pareek</h4>
+                    <p className="text-gold-muted text-xs uppercase tracking-widest">Co-Founder, Radha Enterprises</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <a href="#" className="w-10 h-10 rounded border border-ink/15 flex items-center justify-center text-ink/70 hover:text-gold hover:border-gold transition-colors">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" className="w-10 h-10 rounded border border-ink/15 flex items-center justify-center text-ink/70 hover:text-gold hover:border-gold transition-colors">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://wa.me/919606094081" target="_blank" rel="noreferrer" className="w-10 h-10 rounded border border-ink/15 flex items-center justify-center text-ink/70 hover:text-[#25D366] hover:border-[#25D366] transition-colors">
+                      <MessageCircle size={16} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
