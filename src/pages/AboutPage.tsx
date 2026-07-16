@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Target, Eye, Factory, Package, Truck, Award, MessageCircle } from "lucide-react";
 import SectionHeading from "../components/common/SectionHeading";
+import HariomImg from "../assets/product-image/Hariom.jpeg";
+import MadhuImg from "../assets/product-image/Madhu.jpeg";
 
 const pillars = [
   { icon: Target, title: "Our Mission", text: "To bring the richness of Rajasthan’s traditional mouth fresheners and digestive delights to modern homes, festive gifting, and retail shelves with uncompromising quality." },
@@ -81,7 +83,7 @@ export default function AboutPage() {
               <div className="relative group">
                 <div className="aspect-[4/5] overflow-hidden rounded-md relative mix-blend-multiply">
                   <img
-                    src="/src/assets/product-image/Hariom.jpeg"
+                    src={HariomImg}
                     alt="Hariom Pareek"
                     className="w-full h-full object-cover transition-all duration-700"
                     onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Hariom+Pareek&background=7A1F1F&color=FFFDF8&size=512'; }}
@@ -139,7 +141,7 @@ export default function AboutPage() {
               <div className="relative group lg:order-last">
                 <div className="aspect-[4/5] overflow-hidden rounded-md relative mix-blend-multiply">
                   <img
-                    src="/src/assets/product-image/Madhu.jpeg"
+                    src={MadhuImg}
                     alt="Madhuwan Pareek"
                     className="w-full h-full object-cover transition-all duration-700"
                     onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Madhuwan+Pareek&background=7A1F1F&color=FFFDF8&size=512'; }}
