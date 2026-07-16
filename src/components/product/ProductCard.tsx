@@ -130,6 +130,9 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
               <span className="text-sm text-ink/40 line-through">
                 {mainPrice.original}
               </span>
+              <span className="text-xs text-ink/50 font-medium ml-1">
+                ({targetPack?.label})
+              </span>
             </div>
           ) : (
             <div className="h-7 mb-4" /> // spacer
