@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Eye, MessageCircle, ShoppingBag } from "lucide-react";
+import { Eye, Star, Tag } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import type { Product } from "../../data/types";
 import { getCategory } from "../../data/categories";
 import ProductArt from "../common/ProductArt";
@@ -30,43 +31,37 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
   }) || product.packSizes[0];
   const mainPrice = getPriceData(targetPack?.price);
 
+  const reviewCount = (product.name.length * 3) + 2;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -8 }}
-      className="group relative bg-white rounded-2xl overflow-hidden border border-ink/5 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col"
+      whileHover={{ y: -4 }}
+      className="group relative bg-white rounded-xl overflow-hidden border border-ink/5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
     >
       {/* Badges */}
-      <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
+      <div className="absolute top-0 left-0 z-10 flex flex-col items-start">
         {product.isBestSeller && (
-          <span className="bg-maroon text-cream text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded shadow-sm">
+          <span className="bg-maroon text-cream text-[10px] font-bold uppercase tracking-wider px-2 py-1 shadow-sm">
             Best Seller
           </span>
         )}
-        {product.isNew && (
-          <span className="bg-gold text-ink text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded shadow-sm">
-            New
+        {mainPrice && (
+          <span className="bg-gold text-ink text-[11px] font-bold uppercase tracking-wider px-2 py-1 mt-[1px] flex items-center gap-1 shadow-sm">
+            <Tag size={12} /> {mainPrice.discount}% off
           </span>
         )}
       </div>
 
-      {mainPrice && (
-        <div className="absolute top-3 right-3 z-10">
-          <span className="bg-[#E53935] text-white text-[11px] font-bold px-2 py-1 rounded shadow-sm">
-            {mainPrice.discount}% OFF
-          </span>
-        </div>
-      )}
-
       {/* Image / Art */}
-      <Link to={`/products/${product.slug}`} className="block relative aspect-square overflow-hidden bg-gradient-to-br from-cream to-gold/10">
+      <Link to={`/products/${product.slug}`} className="block relative aspect-[4/3] overflow-hidden bg-white border-b border-gray-100">
         <motion.div
-          className="w-full h-full p-0"
-          whileHover={{ scale: 1.06, rotate: 1 }}
-          transition={{ duration: 0.5 }}
+          className="w-full h-full p-0 flex items-center justify-center"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.4 }}
         >
           {product.image ? (
             <img
@@ -76,23 +71,68 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
             />
           ) : (
             <div className="w-full h-full p-6">
-              <ProductArt type={category?.art ?? "leaf"} seed={product.artSeed} className="w-full h-full drop-shadow-xl" />
+              <ProductArt type={category?.art ?? "leaf"} seed={product.artSeed} className="w-full h-full drop-shadow-md" />
             </div>
           )}
         </motion.div>
 
         {/* Hover overlay actions */}
-        <div className="absolute inset-0 bg-white/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+        <div className="absolute inset-0 bg-ink/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <button
             onClick={(e) => {
               e.preventDefault();
               onQuickView?.(product);
             }}
-            className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-ink shadow-lg hover:bg-maroon hover:text-white transition-colors"
+            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-ink shadow-lg hover:bg-maroon hover:text-white transition-colors"
             aria-label="Quick view"
           >
             <Eye size={18} />
           </button>
+        </div>
+      </Link>
+
+      {/* Content */}
+      <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+        <Link to={`/products/${product.slug}`} className="hover:text-maroon transition-colors mb-1.5">
+          <h3 className="font-bold text-ink text-lg sm:text-xl leading-tight line-clamp-2">
+            {product.name}
+          </h3>
+        </Link>
+        
+        <div className="flex items-center gap-1 mb-3">
+          <div className="flex items-center gap-0.5">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <Star key={star} size={15} className="fill-gold text-gold" />
+            ))}
+          </div>
+        </div>
+
+        <p className="text-sm text-gray-600 leading-relaxed mb-5 line-clamp-2">
+          {product.shortDescription}
+        </p>
+
+        <div className="mt-auto flex flex-col gap-4">
+          {/* Price Block */}
+          {mainPrice ? (
+            <div className="flex items-center justify-between">
+              <div className="flex items-baseline gap-2">
+                <span className="text-2xl font-bold text-maroon">
+                  {mainPrice.current}
+                </span>
+                <span className="text-sm text-gray-400 font-medium">
+                  MRP <span className="line-through">{mainPrice.original}</span>
+                </span>
+              </div>
+              {targetPack?.label && (
+                <span className="text-[11px] font-bold text-gray-500 tracking-wide uppercase bg-gray-100 px-2 py-1 rounded">
+                  {targetPack.label}
+                </span>
+              )}
+            </div>
+          ) : (
+            <div className="h-8" /> // spacer
+          )}
+
           <a
             href={`https://wa.me/917023557846?text=${encodeURIComponent(
               `Hi, I'm interested in ${product.name}`
@@ -100,65 +140,11 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="w-11 h-11 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-lg hover:scale-105 transition-transform"
-            aria-label="WhatsApp inquiry"
+            className="w-full bg-maroon hover:bg-maroon-dark text-cream rounded-full py-3 flex items-center justify-center gap-2 transition-colors font-semibold text-sm shadow-md hover:shadow-luxury transition-all duration-300 group/btn"
           >
-            <MessageCircle size={18} />
+            <FaWhatsapp size={20} className="text-[#25D366] group-hover/btn:scale-110 transition-transform" />
+            Inquire on WhatsApp
           </a>
-        </div>
-      </Link>
-
-      {/* Content */}
-      <div className="p-4 sm:p-5 flex flex-col flex-grow">
-        <p className="text-[11px] uppercase tracking-wider text-ink/40 font-semibold mb-1">
-          {category?.name}
-        </p>
-        <Link to={`/products/${product.slug}`} className="hover:text-maroon transition-colors">
-          <h3 className="font-display text-lg text-ink leading-snug mb-1 line-clamp-1">{product.name}</h3>
-        </Link>
-        <p className="text-xs text-ink/60 leading-relaxed mb-4 line-clamp-2 min-h-[2.5rem]">
-          {product.shortDescription}
-        </p>
-
-        <div className="mt-auto">
-          {/* Price Block */}
-          {mainPrice ? (
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-xl font-bold text-ink">
-                {mainPrice.current}
-              </span>
-              <span className="text-sm text-ink/40 line-through">
-                {mainPrice.original}
-              </span>
-              <span className="text-xs text-ink/50 font-medium ml-1">
-                ({targetPack?.label})
-              </span>
-            </div>
-          ) : (
-            <div className="h-7 mb-4" /> // spacer
-          )}
-
-          <div className="flex items-center justify-between">
-            <div className="flex gap-1">
-              {product.packSizes.slice(0, 3).map((p) => (
-                <span
-                  key={p.label}
-                  className="text-[10px] px-1.5 py-0.5 rounded border border-ink/10 text-ink/60"
-                  title={p.price ? `${p.label} - ${p.price}` : p.label}
-                >
-                  {p.label}
-                </span>
-              ))}
-            </div>
-            
-            <Link
-              to={`/products/${product.slug}`}
-              className="text-maroon hover:bg-maroon/5 p-2 rounded-full transition-colors"
-              aria-label="View Details"
-            >
-              <ShoppingBag size={18} />
-            </Link>
-          </div>
         </div>
       </div>
     </motion.div>
