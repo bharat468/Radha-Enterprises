@@ -23,6 +23,7 @@ export default function CategoriesSection() {
       <div className="mt-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Swiper
           modules={[Autoplay, Pagination]}
+          speed={800}
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop
