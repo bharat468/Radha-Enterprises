@@ -43,13 +43,13 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
       {/* Badges */}
       <div className="absolute top-0 left-0 z-10 flex flex-col items-start">
         {product.isBestSeller && (
-          <span className="bg-maroon text-cream text-[10px] font-bold uppercase tracking-wider px-2 py-1 shadow-sm">
+          <span className="bg-maroon text-cream text-[8px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 sm:py-1 shadow-sm">
             Best Seller
           </span>
         )}
         {mainPrice && (
-          <span className="bg-gold text-ink text-[11px] font-bold uppercase tracking-wider px-2 py-1 mt-[1px] flex items-center gap-1 shadow-sm">
-            <Tag size={12} /> {mainPrice.discount}% off
+          <span className="bg-gold text-ink text-[9px] sm:text-[11px] font-bold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 sm:py-1 mt-[1px] flex items-center gap-0.5 sm:gap-1 shadow-sm">
+            <Tag className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> {mainPrice.discount}% off
           </span>
         )}
       </div>
@@ -90,45 +90,45 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
       </Link>
 
       {/* Content */}
-      <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
-        <Link to={`/products/${product.slug}`} className="hover:text-maroon transition-colors mb-1.5">
-          <h3 className="font-bold text-ink text-lg sm:text-xl leading-tight line-clamp-2">
+      <div className="p-3 sm:p-5 flex flex-col flex-grow bg-white">
+        <Link to={`/products/${product.slug}`} className="hover:text-maroon transition-colors mb-1 sm:mb-1.5">
+          <h3 className="font-bold text-ink text-sm sm:text-xl leading-tight line-clamp-2">
             {product.name}
           </h3>
         </Link>
         
-        <div className="flex items-center gap-1 mb-3">
+        <div className="flex items-center gap-1 mb-2 sm:mb-3">
           <div className="flex items-center gap-0.5">
             {[1, 2, 3, 4, 5].map((star) => (
-              <Star key={star} size={15} className="fill-gold text-gold" />
+              <Star key={star} className="w-3 h-3 sm:w-4 sm:h-4 fill-gold text-gold" />
             ))}
           </div>
         </div>
 
-        <p className="text-sm text-gray-600 leading-relaxed mb-5 line-clamp-2">
+        <p className="text-[11px] sm:text-sm text-gray-600 leading-relaxed mb-3 sm:mb-5 line-clamp-2">
           {product.shortDescription}
         </p>
 
-        <div className="mt-auto flex flex-col gap-4">
+        <div className="mt-auto flex flex-col gap-3 sm:gap-4">
           {/* Price Block */}
           {mainPrice ? (
-            <div className="flex items-center justify-between">
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-bold text-maroon">
+            <div className="flex items-center justify-between gap-1">
+              <div className="flex items-baseline gap-1 sm:gap-2 flex-wrap">
+                <span className="text-base sm:text-2xl font-bold text-maroon">
                   {mainPrice.current}
                 </span>
-                <span className="text-sm text-gray-400 font-medium">
+                <span className="text-[10px] sm:text-sm text-gray-400 font-medium">
                   MRP <span className="line-through">{mainPrice.original}</span>
                 </span>
               </div>
               {targetPack?.label && (
-                <span className="text-[11px] font-bold text-gray-500 tracking-wide uppercase bg-gray-100 px-2 py-1 rounded">
+                <span className="text-[9px] sm:text-[11px] font-bold text-gray-500 tracking-wide uppercase bg-gray-100 px-1 sm:px-2 py-0.5 sm:py-1 rounded whitespace-nowrap">
                   {targetPack.label}
                 </span>
               )}
             </div>
           ) : (
-            <div className="h-8" /> // spacer
+            <div className="h-6 sm:h-8" /> // spacer
           )}
 
           <a
@@ -138,10 +138,10 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="w-full bg-maroon hover:bg-maroon-dark text-cream rounded-full py-3 flex items-center justify-center gap-2 transition-colors font-semibold text-sm shadow-md hover:shadow-luxury transition-all duration-300 group/btn"
+            className="w-full bg-maroon hover:bg-maroon-dark text-cream rounded-full py-2 sm:py-3 px-1 sm:px-4 flex items-center justify-center gap-1 sm:gap-2 transition-colors font-semibold text-[11px] sm:text-sm shadow-md hover:shadow-luxury transition-all duration-300 group/btn"
           >
-            <FaWhatsapp size={20} className="text-[#25D366] group-hover/btn:scale-110 transition-transform" />
-            Inquire on WhatsApp
+            <FaWhatsapp className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#25D366] group-hover/btn:scale-110 transition-transform shrink-0" />
+            <span className="truncate">Inquire on WhatsApp</span>
           </a>
         </div>
       </div>

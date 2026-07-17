@@ -68,8 +68,8 @@ export default function ProductsPage() {
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-8">
           {/* Filters sidebar */}
-          <aside className={`${filtersOpen ? "block" : "hidden"} lg:block`}>
-            <div className="bg-white rounded-2xl border border-gold/20 p-5 shadow-luxury sticky top-28">
+          <aside className={`${filtersOpen ? "block" : "hidden"} lg:block lg:sticky lg:top-28 lg:self-start lg:z-10`}>
+            <div className="bg-white rounded-2xl border border-gold/20 p-5 shadow-luxury max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
               <div className="flex items-center justify-between mb-4 lg:hidden">
                 <p className="font-display text-ink">Categories</p>
                 <button onClick={() => setFiltersOpen(false)}>
@@ -116,7 +116,7 @@ export default function ProductsPage() {
             ) : (
               <motion.div
                 layout
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"
+                className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6"
               >
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} onQuickView={setQuickView} />

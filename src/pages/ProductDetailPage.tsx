@@ -174,7 +174,7 @@ export default function ProductDetailPage() {
         {related.length > 0 && (
           <div className="mt-20">
             <h2 className="font-display text-2xl text-ink mb-6">You Might Also Like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
               {related.map((p) => (
                 <ProductCard key={p.id} product={p} onQuickView={setQuickView} />
               ))}
