@@ -29,7 +29,7 @@ export default function Hero() {
 
       <motion.div
         style={{ y: y2 }}
-        className="absolute -right-1/4 top-0 w-[70%] h-full bg-maroon-gradient"
+        className="hidden md:block absolute -right-1/4 top-0 w-[70%] h-full bg-maroon-gradient"
         initial={{ clipPath: "polygon(100% 0, 100% 100%, 100% 100%, 100% 0)" }}
         animate={{ clipPath: "polygon(38% 0, 100% 0, 100% 100%, 58% 100%)" }}
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}

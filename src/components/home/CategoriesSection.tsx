@@ -54,10 +54,10 @@ export default function CategoriesSection() {
                     </div>
                   )}
                 </motion.div>
-                
+
                 {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent z-10" />
-                
+
                 {/* Elegant info box without glass panel block */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                   <h3 className="font-display text-cream text-base sm:text-lg leading-tight group-hover:text-gold transition-colors duration-300">

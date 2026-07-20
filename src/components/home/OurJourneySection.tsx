@@ -2,11 +2,10 @@ import { motion } from "framer-motion";
 import SectionHeading from "../common/SectionHeading";
 
 const milestones = [
-  { year: "1999", title: "A Small Beginning", text: "Started as a single roasting unit in Bikaner, serving local mithai shops." },
-  { year: "2006", title: "First Branded Pouch", text: "Launched our first packaged mukhwas line under the Radha Enterprises name." },
-  { year: "2013", title: "Expanded Manufacturing", text: "Moved into a dedicated facility, adding churan, candies, and supari lines." },
-  { year: "2019", title: "Pan-India Reach", text: "Crossed 500 retail partners across Rajasthan, Gujarat, and Delhi NCR." },
-  { year: "2024", title: "Premium Gifting Line", text: "Introduced festive hampers and gold-foil packaging for the gifting season." },
+  { year: "Jan 2026", title: "A Vision Takes Shape", text: "Founded Radha Enterprises with a commitment to bringing authentic, premium mukhwas to every home." },
+  { year: "Mar 2026", title: "First Batch Roasted", text: "Set up our modern roasting facility ensuring traditional flavors with the highest hygiene standards." },
+  { year: "May 2026", title: "Signature Range Launch", text: "Introduced our premium collection of sweet mukhwas, digestives, and paan candies to the market." },
+  { year: "Jul 2026", title: "Growing Family", text: "Started partnering with premium retail stores and launching our curated gifting hampers." },
 ];
 
 export default function OurJourneySection() {

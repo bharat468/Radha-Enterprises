@@ -8,6 +8,7 @@ export const products: Product[] = [
   "slug": "gulaab-mukhwas",
   "name": "Gulaab Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality gulaab mukhwas",
   "description": "Enjoy the authentic taste of Gulaab Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -49,6 +50,7 @@ export const products: Product[] = [
   "slug": "bambaiya-mukhwas",
   "name": "Bambaiya Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality bambaiya mukhwas",
   "description": "Enjoy the authentic taste of Bambaiya Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -90,6 +92,7 @@ export const products: Product[] = [
   "slug": "navratan-mukhwas",
   "name": "Navratan Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality navratan mukhwas",
   "description": "Enjoy the authentic taste of Navratan Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -131,6 +134,7 @@ export const products: Product[] = [
   "slug": "garden-mukhwas",
   "name": "Garden Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality garden mukhwas",
   "description": "Enjoy the authentic taste of Garden Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -1361,6 +1365,7 @@ export const products: Product[] = [
   "slug": "anaras-gas-go",
   "name": "Anaras Gas Go",
   "category": "churan",
+  "isBestSeller": true,
   "shortDescription": "Premium quality anaras gas go",
   "description": "Enjoy the authentic taste of Anaras Gas Go. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -1484,6 +1489,7 @@ export const products: Product[] = [
   "slug": "kali-mirch-candy",
   "name": "Kali Mirch Candy",
   "category": "candies",
+   "isBestSeller": true,
   "shortDescription": "Premium quality kali mirch candy",
   "description": "Enjoy the authentic taste of Kali Mirch Candy. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -1689,6 +1695,7 @@ export const products: Product[] = [
   "slug": "royal-barmer-supari",
   "name": "Royal Barmer Supari",
   "category": "supari",
+   "isBestSeller": true,
   "shortDescription": "Premium quality royal barmer supari",
   "description": "Enjoy the authentic taste of Royal Barmer Supari. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -1824,6 +1831,7 @@ export const products: Product[] = [
   "slug": "pumpkin-seeds",
   "name": "Pumpkin Seeds",
   "category": "roasted-mixes",
+   "isBestSeller": true,
   "shortDescription": "Premium quality pumpkin seeds",
   "description": "Enjoy the authentic taste of Pumpkin Seeds. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [

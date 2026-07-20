@@ -25,10 +25,12 @@ export default function ProductCard({ product, onQuickView }: ProductCardProps) 
     return { current: priceStr, original: `₹${original}`, discount };
   };
 
-  const targetPack = product.packSizes.find(p => {
-    const label = p.label.toUpperCase();
-    return label.includes("500 GM") || label.includes("BOX OF 6") || label.includes("BOX OF 24");
-  }) || product.packSizes[0];
+  // Show 500GM price by default as requested by user
+  const packSizes = product?.packSizes || [];
+  const targetPack = packSizes.find(p => {
+    const label = (p.label || "").toUpperCase();
+    return label.includes("500") || label.includes("500GM") || label.includes("500 GM") || label.includes("BOX OF 6") || label.includes("BOX OF 24");
+  }) || packSizes[0];
   const mainPrice = getPriceData(targetPack?.price);
 
   return (
