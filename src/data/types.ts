@@ -8,7 +8,9 @@ export type CategorySlug =
   | "candies"
   | "supari"
   | "tangy-digestives"
-  | "roasted-mixes";
+  | "roasted-mixes"
+  | "jelly"
+  | "premium";
 
 export interface Category {
   slug: CategorySlug;

@@ -93,6 +93,22 @@ export const categories: Category[] = [
     art: "roast",
     image: img(55),
   },
+  {
+    slug: "jelly",
+    name: "Jelly",
+    tagline: "Soft & chewy fruit jellies",
+    description: "Delicious fruit jellies in various fun shapes and flavours.",
+    art: "candy",
+    image: img(39),
+  },
+  {
+    slug: "premium",
+    name: "Premium",
+    tagline: "Silver coated luxury",
+    description: "Our most premium silver coated offerings for special occasions.",
+    art: "seed",
+    image: img(44),
+  },
 ];
 
 export const getCategory = (slug: string) =>
