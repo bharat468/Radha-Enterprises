@@ -66,7 +66,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm mb-5">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="text-gold shrink-0 mt-0.5" />
-                Phogan, Sardarsahar, Churu, Rajasthan - 331402
+                 Kacha bus stand ke pichhe new market, sardarshahar 331403
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-gold shrink-0" />

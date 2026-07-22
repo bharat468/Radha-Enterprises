@@ -176,6 +176,7 @@ export const products: Product[] = [
   "slug": "kashmiri-mukhwas",
   "name": "Kashmiri Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality kashmiri mukhwas",
   "description": "Enjoy the authentic taste of Kashmiri Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -217,6 +218,7 @@ export const products: Product[] = [
   "slug": "pineapple-mukhwas",
   "name": "Pineapple Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality pineapple mukhwas",
   "description": "Enjoy the authentic taste of Pineapple Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -258,6 +260,7 @@ export const products: Product[] = [
   "slug": "chocolate-mukhwas",
   "name": "Chocolate Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality chocolate mukhwas",
   "description": "Enjoy the authentic taste of Chocolate Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [
@@ -463,6 +466,7 @@ export const products: Product[] = [
   "slug": "rajasthani-mukhwas",
   "name": "Rajasthani Mukhwas",
   "category": "sweet-mukhwas",
+  "isBestSeller": true,
   "shortDescription": "Premium quality rajasthani mukhwas",
   "description": "Enjoy the authentic taste of Rajasthani Mukhwas. Crafted with premium ingredients for the perfect after-meal treat.",
   "ingredients": [

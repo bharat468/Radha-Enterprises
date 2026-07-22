@@ -64,7 +64,7 @@ export default function Hero() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
               <span className="text-xs font-medium text-maroon tracking-wide">
-                Family heritage &middot; Phogan, Sardarsahar, Churu
+                Family heritage &middot; Sardarshahar
               </span>
             </motion.div>
 
